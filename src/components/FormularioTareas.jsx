@@ -1,10 +1,17 @@
 import { Button, Form } from "react-bootstrap";
 import ListaTareas from "./ListaTareas";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const FormularioTareas = () => {
   const [tarea, setTarea] = useState("");
-  const [tareas, setTareas] = useState([]);
+  const tareasLocalStorage = JSON.parse(localStorage.getItem("listaTareas")) || [];
+  const [tareas, setTareas] = useState([tareasLocalStorage]);
+
+  useEffect(()=> {
+    //aqui el codigo
+    //resuelve el LS de agregar, modificar y eliminar en LS; con la fn del useEf en react
+    localStorage.setItem("listaTareas", JSON.stringify(tareas));
+  }, [tareas]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
