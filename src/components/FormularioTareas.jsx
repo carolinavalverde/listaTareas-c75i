@@ -1,5 +1,5 @@
 import { Button, Form } from "react-bootstrap";
-import Listatareas from "./Listatareas";
+import ListaTareas from "./ListaTareas";
 import { useState } from "react";
 
 const FormularioTareas = () => {
@@ -23,13 +23,14 @@ const FormularioTareas = () => {
             minLength={3}
             maxLength={50}
             onChange={(e) => setTarea(e.target.value)}
+            value={tarea}
           />
           <Button variant="success" className="mx-2" type="submit">
             Enviar
           </Button>
         </Form.Group>
       </Form>
-      <Listatareas></Listatareas>
+      <ListaTareas tareas={tareas} ></ListaTareas>
     </section>
   );
 };
