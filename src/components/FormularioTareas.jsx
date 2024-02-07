@@ -1,7 +1,6 @@
 import { Button, Form } from "react-bootstrap";
 import ListaTareas from "./ListaTareas";
 import { useState } from "react";
-import ItemTarea from "./ItemTarea";
 
 const FormularioTareas = () => {
   const [tarea, setTarea] = useState("");
@@ -9,18 +8,17 @@ const FormularioTareas = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //guardar la tarea en el array
-    //spread
+    //guardar la tarea en el array tareas
+    // tareas.push(1)
     setTareas([...tareas, tarea]);
-    //reinicio el form cada vez q agrego tarea
+    //limpiar el input donde ingreso la tarea
     setTarea("");
   };
 
   const borrarTarea = (nombreTarea) => {
-    //tarea.splice[0,1]
-
+    // tareas.splice(0,1)
     const tareasFiltradas = tareas.filter(
-      (nombreTarea) => itemTarea !== nombreTarea
+      (itemTarea) => itemTarea !== nombreTarea
     );
     setTareas(tareasFiltradas);
   };
