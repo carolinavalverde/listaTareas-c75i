@@ -11,6 +11,8 @@ const FormularioTareas = () => {
     //guardar la tarea en el array
     //spread
     setTareas([...tareas, tarea]);
+    //reinicio el form cada vez q agrego tarea
+    setTarea("");
   };
 
   return (
